@@ -25,6 +25,18 @@ class InstructeurModel
         return $this->db->resultSet();
     }
 
+    public function deleteInstructeur($instructeurId)
+    {
+        $sql = "DELETE FROM instructeur
+                WHERE Id = :instructeurId";
+
+        $this->db->query($sql);
+
+        $this->db->bind(':instructeurId', $instructeurId);
+
+        $this->db->excecuteWithoutReturn();
+    }
+
     public function getToegewezenVoertuigen($Id)
     {
         $sql = "SELECT VOER.Id,

@@ -34,7 +34,13 @@ class Instructeur extends BaseController
                                 directions_car
                                 </span>
                             </a>
-                        </td>            
+                        </td> 
+                        <td>
+                            <a href='" . URLROOT . "/instructeur/deleteInstructeur/$instructeur->Id'>
+                                <span class='material-symbols-outlined'>
+                                    delete
+                                </span>
+                            </a>         
                       </tr>";
         }
 
@@ -45,6 +51,13 @@ class Instructeur extends BaseController
         ];
 
         $this->view('Instructeur/overzichtinstructeur', $data);
+    }
+
+    public function deleteInstructeur($instructeurId)
+    {
+        $this->instructeurModel->deleteInstructeur($instructeurId);
+
+        header("Location: " . URLROOT . "/instructeur/overzichtinstructeur");
     }
 
     public function overzichtVoertuigen($Id, $Message = null)
