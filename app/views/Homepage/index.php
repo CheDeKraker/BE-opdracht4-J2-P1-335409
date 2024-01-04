@@ -12,7 +12,6 @@
 <body>
     <h3><?= $data['title']; ?></h3>
     <a href="<?= URLROOT; ?>/Instructeur/overzichtinstructeur">Instructeurs in dienst</a>
-    <a href="<?= URLROOT; ?>/Examens/overzichtexamens">Examinatoren in dienst</a>
     <a href="<?= URLROOT; ?>/Voertuig/overzichtVoertuigen">Alle voertuigen</a>
 </body>
 
